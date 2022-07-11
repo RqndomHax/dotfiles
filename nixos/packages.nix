@@ -83,6 +83,6 @@
     (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
   ];
   
-  enableDefaultFonts = false;
+  fonts.enableDefaultFonts = false;
 
 }
