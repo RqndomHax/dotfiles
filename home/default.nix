@@ -6,6 +6,8 @@
 # includes programs and services that work on both Wayland and X
 {
   imports = [
+    ./school.nix
+    ./wm.nix
   ];
   
   home.stateVersion = "22.05";
@@ -20,17 +22,45 @@
   };
 
   home.packages = with pkgs; [
+    # screenshot
+    unclutter
+    scrot
+    xclip
+    # screen saver
+    xscreensaver
     # archives
     unzip
     unrar
     # file managers
     file
     gh
+    lm_sensors
+    exiftool
     # torrents
     transmission-remote-gtk
-    # misc
-    libnotify
-    xournalpp
+    # communication
+    discord
+    # more editors
+    emacs
+    vscode
+    # music apps
+    spotify
+    cava
+    spotifyd
+    spotify-tui
+    tty-clock
+    # commit security
+    pinentry
+    # tor
+    tor
+    torsocks
+    # docker containers
+    docker
+    docker-compose
+    # VM
+    virt-manager
+    qemu
+    libguestfs
   ];
 
   home.pointerCursor = {
@@ -82,9 +112,7 @@
   };
 
   programs = {
-    firefox = {
-      enable = true;
-    };
+    firefox.enable = true;
 
     git = {
       enable = true;
@@ -105,9 +133,6 @@
   };
 
   services = {
-    gpg-agent = {
-      enable = true;
-    };
-
+    gpg-agent.enable = true;
   };
 }
