@@ -24,7 +24,7 @@
   fonts.fonts = with pkgs; [
     anonymousPro
     unifont
-    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+    (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "UbuntuMono"];})
   ];
   
   fonts.enableDefaultFonts = false;
