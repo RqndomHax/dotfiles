@@ -19,6 +19,7 @@
       ./hardware-configuration.nix
       
       ./boot.nix
+      ./packages.nix
     ];
 
   networking.hostId = "87cea77d";
@@ -97,78 +98,6 @@
   nixpkgs.config = {
     allowUnfree = true;
   };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    alacritty
-    dmenu
-    xmobar
-    conky
-    polybarFull
-    lemonbar
-    feh
-    picom
-    unclutter
-    scrot
-    xclip
-    xscreensaver
-    ranger
-    pavucontrol # leftwm
-    direnv
-    wget
-    neofetch
-    appimage-run
-    redshift
-    killall
-    htop # utils
-    firefox
-    chromium
-    surf # web browsers
-    discord
-    helix
-    emacs
-    vscode # text editors
-    spotify
-    cava
-    spotifyd
-    spotify-tui
-    tty-clock # music apps
-    pinentry
-    gnupg # signing commits
-    tor
-    torsocks #tor
-    docker
-    docker-compose # docker containers
-    xorg.xbacklight
-    lm_sensors
-    filezilla
-    sshfs # Server file manager
-    bitwarden # password manager
-    virt-manager
-    qemu
-    libguestfs # VM
-    exiftool # file info
-    cmake
-    git
-    gcc
-    bintools-unwrapped
-    maven
-    gnumake
-    tree
-    ncurses
-    which
-    valgrind-light
-    man-pages # EPITECH INSTALLATION
-  ];
-
-  fonts.fonts = with pkgs; [
-    anonymousPro
-    nerdfonts
-    unifont
-    siji
-    noto-fonts
-  ];
 
   services.openssh.enable = true;
   services.vnstat.enable = true;
