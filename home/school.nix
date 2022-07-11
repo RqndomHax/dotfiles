@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     cmake
     git
-    gcc
+    (hiPrio gcc)
     bintools-unwrapped
     maven
     gnumake
