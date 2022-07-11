@@ -17,6 +17,8 @@
     helix
     # password manager
     bitwarden
+    # audio mixer
+    pamixer
   ];
 
   fonts.fonts = with pkgs; [
