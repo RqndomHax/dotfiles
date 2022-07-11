@@ -24,6 +24,7 @@
   fonts.fonts = with pkgs; [
     anonymousPro
     unifont
+    noto-fonts
     (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono" "UbuntuMono"];})
   ];
   
