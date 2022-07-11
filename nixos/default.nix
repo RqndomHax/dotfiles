@@ -20,94 +20,16 @@
       
       ./boot.nix
       ./packages.nix
+      ./programs.nix
+      ./services.nix
+      ./networking.nix
+      ./configuration.nix
+      ./users.nix
     ];
-
-  networking.hostId = "87cea77d";
-  networking.hostName = "rqndom-nixos"; # Define your hostname.
-
-  networking.interfaces.enp1s0.useDHCP = true;
-  networking.interfaces.wlp0s20f3.useDHCP = true;
-
-  networking.networkmanager.enable = true;
-
-  hardware.opengl = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      vaapiIntel
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
-  };
-
-  # Set your time zone.
-  time.timeZone = "Europe/Paris";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    keyMap = "fr";
-  };
-
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-  services.logind.extraConfig = ''
-    # don’t shutdown when power button is short-pressed
-    HandlePowerKey=ignore
-  '';
-
-  services.zfs.trim.enable = true;
-  services.zfs.autoSnapshot.enable = true;
-  services.zfs.autoScrub.enable = true;
-
-
-  services.xserver = {
-    enable = true;
-    layout = "fr";
-    libinput.enable = true;
-
-    videoDrivers = [ "modesetting" ];
-    useGlamor = true;
-
-    displayManager = {
-      lightdm.enable = true;
-      defaultSession = "none+leftwm";
-    };
-
-    windowManager.leftwm = {
-      enable = true;
-    };
-  };
-
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.rqndomhax = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "video" ]; # Enable ‘sudo’ for the user.
-  };
 
   nixpkgs.config = {
     allowUnfree = true;
   };
-
-  services.openssh.enable = true;
-  services.vnstat.enable = true;
-
-
-  programs.dconf.enable = true;
-  programs.light.enable = true;
-  programs.ssh.ciphers = [ "aes256-gcm@openssh.com" ];
-  programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
