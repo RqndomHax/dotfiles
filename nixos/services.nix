@@ -10,7 +10,7 @@
     zfs.trim.enable = true;
     zfs.autoSnapshot.enable = true;
     zfs.autoScrub.enable = true;
-
+    mullvad-vpn.enable = true;
 
     xserver = {
       enable = true;

@@ -19,6 +19,8 @@
     bitwarden
     # audio mixer
     pamixer
+    # mullvad
+    mullvad
   ];
 
   fonts.fonts = with pkgs; [
